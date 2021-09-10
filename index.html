@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Página de interesse para jogos
+    </title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <h1 class="titlemain">Cadastro de Interesse Para Jogos</h1>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Nome Completo</label><label class="validation-error hide"
+                            id="nomeCompletoValidationError">O campo não foi preenchido.</label>
+                        <input type="text" name="nomeCompleto" id="nomeCompleto">
+                    </div>
+                    <div>
+                        <label>Telefone para Contato</label>
+                        <input type="text" name="telefone" id="telefone">
+
+                    </div>
+                    <div>
+                        <label>Nome do Jogo Desejado</label>
+                        <input type="text" name="nomedojogo" id="nomedojogo">
+                    </div>
+                    <div>
+                        <label>Plataforma</label>
+                        <input type="text" name="palaforma" id="palaforma">
+
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Confirmar">
+                        <input type="reset" value="Resetar">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Nome Completo</th>
+                            <th>Telefone Para Contato</th>
+                            <th>Nome do Jogo</th>
+                            <th>Plataforma</th>
+                            <th>Ação</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+<footer>
+    Alex Games e TI
+</footer>
+
+</html>
