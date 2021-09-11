@@ -1,13 +1,11 @@
- body {
+body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: linear-gradient(to left, #9725c4, #300cb3);
     border: none;
-    
 }
 
 table {
     width: 80%;
-   
 }
 
 .titlemain {
@@ -22,17 +20,14 @@ table {
 table {
     color: white;
     border-collapse: collapse;
-    
 }
 
 table.list {
     color: white;
     width: 100%;
-    
 }
 
 td, th {
-    
     border: 3px solid #dddddd;
     border-radius: 4px;
     text-align: left;
@@ -54,29 +49,24 @@ input[type=text], input[type=number] {
     box-sizing: border-box;
 }
 
-
 input[type=submit] {
-    width: 30%;
+    width: 100px;
     background-color: #ddd;
     color: #000;
     padding: 14px;
     margin-left: 8px 0;
-    border: 1px;
-    border-radius: 4px; 
+    border-radius: 1px;
     cursor: pointer;
-  
 }
 
 input[type=reset] {
-    width: 30%;
+    width: 100px;
     background-color: #ddd;
     color: #000;
     padding: 14px;
     margin: 8px 0;
-    border: none;
-    border-radius: 4px;
+    border-radius: 1px;
     cursor: pointer;
-    
 }
 
 form div.form-action-buttons {
@@ -99,8 +89,8 @@ label.validation-error {
     display: none;
 }
 
-footer{
-    width:100;
+footer {
+    margin-top: 210px;
     text-align: center;
     font-weight: 200;
     font-style: italic;
