@@ -1,5 +1,8 @@
 var selectedRow = null
-//Função para os tratamento no campo nome
+//************************************************************************
+//Função para os tratamento no campo nome no qual estou lendo o formulário
+//e aferindo se o campo Nome está como vazio.
+//************************************************************************ 
 function onFormSubmit() {
     if (validateName()) {
         var formData = readFormData();
@@ -11,8 +14,10 @@ function onFormSubmit() {
     }
 }
 
-
-//Funçaõ para ler os dados do formulário
+//************************************************************************ 
+//Funçaõ para ler os dados inseridos no formulário, recebendo os elementos
+// criados como ID no html e atribuindo a um getElementBId
+//************************************************************************ 
 function readFormData() {
     var formData = {};
     formData["nomeCompleto"] = document.getElementById("nomeCompleto").value;
@@ -21,7 +26,10 @@ function readFormData() {
     formData["palaforma"] = document.getElementById("palaforma").value;
     return formData;
 }
-//Inserindo novo registro
+//************************************************************************ 
+//Inserindo novo registro, buscando através do ID da tabela (employeeList), 
+//e atribuindo com o cell pegando as posições dos campos.
+//************************************************************************ 
 function insertNewRecord(data) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
@@ -34,10 +42,12 @@ function insertNewRecord(data) {
     cell4 = newRow.insertCell(3);
     cell4.innerHTML = data.palaforma;
     cell4 = newRow.insertCell(4);
-    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
-                       <a onClick="onDelete(this)">Delete</a>`;
+    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a> 
+                       <a onClick="onDelete(this)">Delete</a>`; //Caso seja utilizado os botões de Edit ou Delete
 }
-//Função para resetar o formulário 
+//************************************************************************ 
+//Função para resetar o formulário atribuindo um valor em branco ""
+//************************************************************************ 
 function resetForm() {
     document.getElementById("nomeCompleto").value = "";
     document.getElementById("telefone").value = "";
@@ -45,7 +55,10 @@ function resetForm() {
     document.getElementById("palaforma").value = "";
     selectedRow = null;
 }
-//Função para editar os dados
+//************************************************************************ 
+//Função para editar os dados, pegando os dados através do getElementById,
+// selecionando a linha e e sobrescrevendo ou alterando com o inneerHTML.
+//************************************************************************ 
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById("nomeCompleto").value = selectedRow.cells[0].innerHTML;
@@ -53,14 +66,18 @@ function onEdit(td) {
     document.getElementById("nomedojogo").value = selectedRow.cells[2].innerHTML;
     document.getElementById("palaforma").value = selectedRow.cells[3].innerHTML;
 }
-//Função para alterar os dados
+//************************************************************************ 
+//Função para atualizar todos os dados através do formulário
+//************************************************************************ 
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.nomeCompleto;
     selectedRow.cells[1].innerHTML = formData.telefone;
     selectedRow.cells[2].innerHTML = formData.nomedojogo;
     selectedRow.cells[3].innerHTML = formData.palaforma;
 }
-//Função para confirmar deletar
+//************************************************************************ 
+//Função para deletar com confirmação
+//************************************************************************ 
 function onDelete(td) {
     if (confirm('Deseja deletar ?')) {
         row = td.parentElement.parentElement;
@@ -68,7 +85,9 @@ function onDelete(td) {
         resetForm();
     }
 }
-//Função para validar os dados nos campos
+//************************************************************************ 
+//Função para validar se o dado nomeCompleto foi de fato inserido.
+//************************************************************************ 
 function validateName() {
     isValid = true;
     if (document.getElementById("nomeCompleto").value == "") {
