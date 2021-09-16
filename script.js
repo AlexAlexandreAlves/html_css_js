@@ -12,7 +12,7 @@ function onFormSubmit() {
 }
 
 
-//Funçaõ para ler o formulário
+//Funçaõ para ler os dados do formulário
 function readFormData() {
     var formData = {};
     formData["nomeCompleto"] = document.getElementById("nomeCompleto").value;
@@ -21,7 +21,7 @@ function readFormData() {
     formData["palaforma"] = document.getElementById("palaforma").value;
     return formData;
 }
-//Inserting new Datas
+//Inserindo novo registro
 function insertNewRecord(data) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
